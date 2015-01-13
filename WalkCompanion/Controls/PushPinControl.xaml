@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="WalkCompanion.Controls.PushPinControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="480" d:DesignWidth="480">
+
+    <Grid x:Name="LayoutRoot">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0.6" Margin="0,-86,0,0" x:Name="MainStackPanel">
+            <Border Background="#FF008B00" CornerRadius="0" x:Name="imgborder" HorizontalAlignment="Center" >
+                <StackPanel>
+                <TextBlock x:Name="Title" FontSize="20" Foreground="White" Text="This is Description on ToolTip" TextWrapping="Wrap" Margin="5,5,5,5" />
+                <TextBlock x:Name="Time" FontSize="20" Foreground="White" Text="This is Description on ToolTip" TextWrapping="Wrap" Margin="5,5,5,5" />
+                </StackPanel>
+            </Border>
+            <Path x:Name="imgpath" Data="M0,0 L0,1 L1,0" Fill="#FF008B00" Stretch="Fill" Margin="0,0" Height="12" Width="18" HorizontalAlignment="Left"   />
+            <!--<Image Source="/Images/icons-marker.png" Stretch="None" x:Name="imgmarker" HorizontalAlignment="Left" Tap="imgmarker_Tap"/>-->
+        </StackPanel>
+    </Grid>
+</UserControl>

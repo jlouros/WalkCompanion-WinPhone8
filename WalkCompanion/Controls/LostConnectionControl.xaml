@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="WalkCompanion.Controls.LostConnectionControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:WalkCompanion.Assets.Xaml"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="480" d:DesignWidth="480">
+
+    <Grid Height="80" VerticalAlignment="Bottom" Background="{StaticResource PhoneAccentBrush}" Margin="-12,0" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="60"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <local:LostConnection Width="50" />
+        <TextBlock Grid.Column="1" Text="{Binding LocalizedResources.LostConnectivity, Mode=OneWay, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Margin="20,0" TextAlignment="Center" Foreground="#DEFFFFFF" Style="{StaticResource PhoneTextSmallStyle}"/>
+    </Grid>
+</UserControl>

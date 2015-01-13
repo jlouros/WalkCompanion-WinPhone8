@@ -1,0 +1,157 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="WalkCompanion.About"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True"
+    toolkit:TiltEffect.IsTiltEnabled="True">
+
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardIn"/>
+            </toolkit:NavigationInTransition.Backward>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardIn"/>
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardOut"/>
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardOut"/>
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock Text="{Binding Path=LocalizedResources.ApplicationTitleCaps, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}" />
+            <!--<TextBlock Text="{Binding Path=LocalizedResources.About, Source={StaticResource LocalizedStrings}}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>-->
+        </StackPanel>
+
+        <phone:Pivot Margin="0,26,0,0">
+            <phone:PivotItem Header="{Binding Path=LocalizedResources.About, Source={StaticResource LocalizedStrings}}">
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="{Binding Path=LocalizedResources.AppDescription, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}" TextWrapping="Wrap"/>
+
+                    <StackPanel Grid.Row="1" VerticalAlignment="Center">
+                        <TextBlock Text="{Binding Path=LocalizedResources.Version, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextLargeStyle}" TextWrapping="Wrap"/>
+                        <TextBlock Text="{Binding Path=LocalizedResources.CurrentVersionNumber, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}" TextWrapping="Wrap"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="2" >
+                        <TextBlock Text="{Binding Path=LocalizedResources.ChangeLog, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextLargeStyle}" TextWrapping="Wrap"/>
+                        <TextBlock Text="{Binding Path=LocalizedResources.ChangeLog_1_0_0_0, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}" TextWrapping="Wrap"/>
+                    </StackPanel>
+
+                </Grid>
+
+            </phone:PivotItem>
+            <phone:PivotItem Header="{Binding Path=LocalizedResources.Author, Source={StaticResource LocalizedStrings}}">
+                <Grid>
+                    <Canvas Margin="12,79,194,482">
+                        <Path x:Name="AuthorImg" Data="M30.538319,0C32.726036,0.00037384033 36.181049,0.41362 37.768726,2.8148232 37.768726,2.8148232 52.18026,4.3902798 43.849483,19.588238 43.849483,19.588238 45.763599,19.701639 45.086395,21.896958 45.086395,21.896958 44.354687,26.060997 43.060375,26.680802 43.060375,26.680802 43.003174,32.704457 39.120338,37.262999L39.117043,37.262963 39.156185,37.524579C40.242313,43.661151 50.5756,46.100018 50.5756,46.100018 57.583401,47.873485 64,51.672816 64,51.672816L64,58.427998 0,58.427998 0,49.81605C0.169312,49.055664 10.8074,45.678226 10.8074,45.678226 16.125,44.243251 18.4063,43.06107 18.4063,43.06107 18.489599,42.63918 19.502701,42.048088 19.502701,42.048088 21.930279,41.562294 23.093319,38.677963 23.555504,37.093953L23.562277,37.070052 23.547613,37.052776C23.194305,36.630563 20.361277,33.041792 20.151369,26.287699 20.151369,26.287699 19.138359,25.948996 18.23735,20.770748 18.23735,20.770748 18.01335,19.195133 19.758064,19.025932 19.758064,19.025932 17.448244,11.313562 19.081059,6.4736385 19.081059,6.4736385 21.950884,1.351181 28.594145,0.11289215 28.594145,0.11289215 29.392374,-0.00019454956 30.538319,0z" Stretch="Uniform" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" Height="46" Width="46">
+                            <Path.Fill>
+                                <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
+                            </Path.Fill>
+                        </Path>
+                        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="John Louros" VerticalAlignment="Top" Canvas.Left="82" Canvas.Top="10"/>
+                    </Canvas>
+                    <Canvas Margin="12,227,54,338">
+
+                        <Path x:Name="EmailImg" Data="M0,4.0800388L0.030031017,4.0800388 12.610706,16.409995 26.621516,30.149985 40.642334,16.409995 53.223011,4.0800388 53.333001,4.0800388 53.333001,39.080039 0,39.080039z M3.1698808,0L26.660885,0 50.161892,0 38.411389,11.791528 26.660885,23.573054 14.920383,11.791528z" Stretch="Uniform" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" Height="42" Width="42" Tap="OpenEmail">
+                            <Path.Fill>
+                                <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
+                            </Path.Fill>
+                            <Path.RenderTransform>
+                                <TransformGroup>
+                                    <RotateTransform Angle="0" />
+                                    <ScaleTransform ScaleX="1" ScaleY="1" />
+                                </TransformGroup>
+                            </Path.RenderTransform>
+                        </Path>
+                        <HyperlinkButton Content="UnhandledXcept@outlook.com" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Canvas.Left="65" Canvas.Top="9" Tap="OpenEmail"/>
+                    </Canvas>
+                    <Canvas Margin="8,300,52,265">
+                        <Path x:Name="FacebookImg" Data="F1M-1775.32,-68.9708L-1831.47,-68.9708C-1833.27,-68.9708,-1834.73,-67.3745,-1834.73,-65.4058L-1834.73,-10.1649C-1834.73,-8.19482,-1833.27,-6.59973,-1831.47,-6.59973L-1802.47,-6.59973 -1802.47,-32.2261 -1809.5,-32.2261 -1809.5,-40.5503 -1802.47,-40.5503 -1802.47,-45.5282C-1802.47,-50.9435,-1798.08,-55.3315,-1792.66,-55.3315L-1783.74,-55.3315 -1783.74,-47.0099 -1787.86,-47.0099C-1789.89,-47.0099,-1791.53,-45.3667,-1791.53,-43.3407L-1791.53,-40.5503 -1783.74,-40.5503 -1783.74,-32.2261 -1791.53,-32.2261 -1791.53,-6.59973 -1775.32,-6.59973C-1773.52,-6.59973,-1772.06,-8.19482,-1772.06,-10.1649L-1772.06,-65.4058C-1772.06,-67.3745,-1773.52,-68.9708,-1775.32,-68.9708" Stretch="Uniform" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" Height="41.876" Width="51.5" Tap="OpenFacebook">
+                            <Path.Fill>
+                                <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
+                            </Path.Fill>
+                            <Path.RenderTransform>
+                                <TransformGroup>
+                                    <RotateTransform Angle="0" />
+                                    <ScaleTransform ScaleX="1" ScaleY="1" />
+                                </TransformGroup>
+                            </Path.RenderTransform>
+                        </Path>
+                        <HyperlinkButton Content="facebook.com/UnhandledXcept" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Canvas.Left="70" Canvas.Top="8" Tap="OpenFacebook"/>
+                    </Canvas>
+                    <Canvas Margin="8,374,166,199">
+                        <Path Data="M197.52911204382,0C214.36211985632,1.62908690981567E-08 229.576872053585,5.86883281275368 240.249113264523,15.2648999552403 253.58265513464,13.0963332514439 266.113798323117,9.07583688303566 277.423429670773,3.53464888140297 273.050291243038,14.823095069376 263.768949690304,24.2964646677647 251.683622541866,30.2794587473545 263.528165998898,29.1086556772862 274.811094465695,26.5167157511387 285.30499095007,22.6654355387363 277.459074202023,32.3635270456944 267.535886946163,40.8795792917881 256.096891584835,47.6908929209385 256.212797346554,49.7675492624912 256.266264143429,51.8513924936924 256.266264143429,53.9464738230381 256.266264143429,117.833741889444 197.390897932491,191.499994025675 89.7283765701868,191.499994025675 56.6687299637415,191.499994025675 25.904821577511,183.492044196573 0,169.777047858683 4.57828969045659,170.222665534464 9.24119872137089,170.454583869425 13.9665510086634,170.454583869425 41.387041273556,170.454583869425 66.6232053665735,162.726403937784 86.6569120316126,149.758828864542 61.0463544754602,149.36872266337 39.425558271847,135.388772712198 31.9764673142054,116.184282050577 35.5517026810267,116.751252875772 39.220537367306,117.05305646464 42.9963056473352,117.05305646464 48.3280050186731,117.05305646464 53.499174299679,116.460466132608 58.4117261795618,115.355737433878 31.633228483639,110.915460334269 11.4568111328699,91.375901923624 11.4568111328699,67.9520356516514 11.4568111328699,67.7495591501865 11.4568111328699,67.5470826487217 11.4656536011316,67.3482072214756 19.3562070755579,70.9675767283115 28.3834077744104,73.1397340159092 37.9811765579798,73.3938920359287 22.2716314224817,64.719407782999 11.9382707504847,49.9257523874912 11.9382707504847,33.1513993601475 11.9382707504847,24.2928693155918 14.8268939880945,15.9867045740757 19.8643323807337,8.85111306711769 48.7292005447962,38.0997712473545 91.8637220291712,57.3411195139561 140.51266306921,59.3586747507725 139.514097395382,55.8204285959873 138.996992292843,52.1311738352451 138.996992292843,48.3425881724033 138.996992292843,21.6456467966709 165.204923811398,1.62908690981567E-08 197.52911204382,0z" Stretch="Uniform" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" Height="34.409" Width="57.377" Tap="OpenTwitter">
+                            <Path.Fill>
+                                <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
+                            </Path.Fill>
+                        </Path>
+                        <HyperlinkButton Content="@UnhandledXcept" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Canvas.Left="72" Canvas.Top="3" Tap="OpenTwitter"/>
+                    </Canvas>
+
+                </Grid>
+            </phone:PivotItem>
+            <phone:PivotItem Header="{Binding Path=LocalizedResources.License, Source={StaticResource LocalizedStrings}}">
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <StackPanel VerticalAlignment="Center">
+                        <TextBlock FontWeight="Bold" Style="{StaticResource PhoneTextNormalStyle}" Text="{Binding Path=LocalizedResources.LicenseAgreement, Source={StaticResource LocalizedStrings}}" />
+                        <TextBlock TextWrapping="Wrap" Style="{StaticResource PhoneTextNormalStyle}" Text="{Binding Path=LocalizedResources.LicenseDescription, Source={StaticResource LocalizedStrings}}" />
+                    </StackPanel>
+
+                    <StackPanel VerticalAlignment="Center" Grid.Row="1">
+                        <TextBlock FontWeight="Bold" Style="{StaticResource PhoneTextNormalStyle}" Text="{Binding Path=LocalizedResources.IconsProvided, Source={StaticResource LocalizedStrings}}" />
+                        <TextBlock TextWrapping="Wrap" Style="{StaticResource PhoneTextNormalStyle}" Text="{Binding Path=LocalizedResources.IconsProvider, Source={StaticResource LocalizedStrings}}"/>
+                    </StackPanel>
+
+
+                </Grid>
+            </phone:PivotItem>
+        </phone:Pivot>
+
+
+
+        <!--TitlePanel contains the name of the application and page title-->
+
+
+
+    </Grid>
+
+</phone:PhoneApplicationPage>

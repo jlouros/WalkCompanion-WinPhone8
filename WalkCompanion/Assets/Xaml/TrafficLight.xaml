@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="WalkCompanion.Assets.Xaml.TrafficLight"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="480" d:DesignWidth="480">
+    
+    <Grid x:Name="LayoutRoot" >
+        <Viewbox xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+            <Grid>
+               
+                <Path Data="F1M-251.746,-6.60834C-251.746,-6.89484,-251.754,-7.17609,-251.767,-7.45856L-259.539,-7.45856 -259.539,-14.5544C-253.98,-14.5623 -249.476,-19.9593 -249.476,-26.6175 -249.476,-26.904 -249.486,-27.1853 -249.503,-27.4665L-259.539,-27.4665 -259.539,-32.8233 -289.775,-32.8233 -289.775,-27.5381 -299.814,-27.5381C-299.83,-27.2542 -299.841,-26.969 -299.841,-26.6787 -299.841,-19.9468 -295.335,-14.4886 -289.775,-14.4827L-289.775,-7.52905 -297.266,-7.52905C-297.278,-7.24512 -297.287,-6.95996 -297.287,-6.6709 -297.287,0.0608521 -293.925,5.5166 -289.775,5.52515L-289.775,13.3316 -297.266,13.3316C-297.278,13.6155 -297.287,13.9007 -297.287,14.1898 -297.287,20.9216 -293.925,26.3773 -289.775,26.3857L-289.775,31.1767 -259.539,31.1767 -259.539,26.3154C-255.234,26.305 -251.746,20.9091 -251.746,14.2523 -251.746,13.9658 -251.754,13.6833 -251.767,13.402L-259.539,13.402 -259.539,5.45477C-255.234,5.44434,-251.746,0.0484009,-251.746,-6.60834z M-274.657,27.54C-279.075,27.54 -282.657,23.9581 -282.657,19.54 -282.657,15.1221 -279.075,11.54 -274.657,11.54 -270.239,11.54 -266.657,15.1221 -266.657,19.54 -266.657,23.9581 -270.239,27.54 -274.657,27.54z M-274.657,7.10516C-279.075,7.10516 -282.657,3.52313 -282.657,-0.894836 -282.657,-5.31293 -279.075,-8.89484 -274.657,-8.89484 -270.239,-8.89484 -266.657,-5.31293 -266.657,-0.894836 -266.657,3.52313 -270.239,7.10516 -274.657,7.10516z M-274.657,-13.3284C-279.075,-13.3284 -282.657,-16.9111 -282.657,-21.3284 -282.657,-25.7465 -279.075,-29.3284 -274.657,-29.3284 -270.239,-29.3284 -266.657,-25.7465 -266.657,-21.3284 -266.657,-16.9111 -270.239,-13.3284 -274.657,-13.3284z" Stretch="Uniform" Fill="{StaticResource PhoneForegroundBrush}" Width="256" Height="256" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5">
+                    <Path.RenderTransform>
+                        <TransformGroup>
+                            <TransformGroup.Children>
+                                <RotateTransform Angle="0" />
+                                <ScaleTransform ScaleX="1" ScaleY="1" />
+                            </TransformGroup.Children>
+                        </TransformGroup>
+                    </Path.RenderTransform>
+                </Path>
+            </Grid>
+        </Viewbox>
+
+    </Grid>
+</UserControl>

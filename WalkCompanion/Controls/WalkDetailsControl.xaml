@@ -1,0 +1,68 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Converters="clr-namespace:WalkCompanion.Converters" x:Class="WalkCompanion.Controls.WalkDetailsControl"
+    mc:Ignorable="d"
+    d:DesignHeight="480" d:DesignWidth="480">
+
+    <!--<UserControl.Resources>
+        <Converters:BoolToInvertedVisibilityConverter x:Key="BoolToInvertedVisibilityConverter"/>
+        <Converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+        <Converters:DoubleToStringConverter x:Key="DoubleToStringConverter"/>
+        <Converters:TimeSpanToStringConverter x:Key="TimeSpanToStringConverter"/>
+        <Converters:DateTimeToStringConverter x:Key="DateTimeToStringConverter"/>
+        <Converters:InvertVisibilityConverter x:Key="InvertVisibilityConverter"/>
+    </UserControl.Resources>-->
+    <UserControl.FontFamily>
+        <StaticResource ResourceKey="PhoneFontFamilyNormal"/>
+    </UserControl.FontFamily>
+    <UserControl.FontSize>
+        <StaticResource ResourceKey="PhoneFontSizeNormal"/>
+    </UserControl.FontSize>
+    <UserControl.Foreground>
+        <StaticResource ResourceKey="PhoneForegroundBrush"/>
+    </UserControl.Foreground>
+
+    <Grid x:Name="LayoutRoot" Margin="0,0,0,20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.RowSpan="2" Margin="0" >
+            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Horizontal">
+                <TextBlock  FontSize="48">#</TextBlock>
+                <!--<TextBlock  FontSize="48" Text="{Binding WalkNumber}"/>-->
+            </StackPanel>
+        </Grid>
+
+        <StackPanel Grid.Column="1" Margin="20,0,0,0" >
+            <TextBlock Text="{Binding LocalizedResources.Started, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontWeight="Bold" />
+            <TextBlock Text="{Binding StartDate}" />
+        </StackPanel>
+
+        <StackPanel  Grid.Column="2" Margin="20,0,0,0">
+            <TextBlock Text="{Binding LocalizedResources.Finished, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontWeight="Bold" />
+            <TextBlock Text="{Binding EndDate}" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="1" Margin="20,0,0,0">
+            <TextBlock Text="{Binding LocalizedResources.Time, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontWeight="Bold" />
+            <TextBlock Text="{Binding TimeTravelled}" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="2" Margin="20,0,0,0">
+            <TextBlock Text="{Binding LocalizedResources.Distance, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontWeight="Bold" />
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding DistanceTravelled}" />
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>
