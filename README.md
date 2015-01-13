@@ -1,7 +1,7 @@
 Walk companion for Windows Phone 8
 =================
 
-"Walk companion" is a Windows Phone 8 application tahat help you track your walks, runs or hikes. 
+"Walk companion" is a Windows Phone 8 application that help you track your walks, runs or hikes. 
 Provides information about your current route, distance travelled, time elapsed, average speed and estimated caloire burn.
 Any contribution is highly appreciated.
 
